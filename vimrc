@@ -11,6 +11,7 @@ Plug 'mattn/emmet-vim'
 Plug 'https://github.com/bkad/CamelCaseMotion.git'
 Plug 'https://github.com/vim-scripts/auto_mkdir.git'
 Plug 'https://github.com/tpope/vim-surround.git'
+Plug 'craigemery/vim-autotag'
 
 
 call plug#end()
@@ -61,5 +62,7 @@ nnoremap <C-l> <C-w>l
 " }
 
 map <C-n> :NERDTreeToggle<CR>
+
+let &colorcolumn="80"
 
 let g:airline_theme='minimalist'
