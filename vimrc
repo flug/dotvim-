@@ -1,17 +1,18 @@
 call plug#begin("~/.vim/plugged")
 
-Plug 'junegunn/vim-easy-align'
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'sgur/vim-editorconfig'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'arnaud-lb/vim-php-namespace'
-Plug 'mattn/emmet-vim'
-Plug 'https://github.com/bkad/CamelCaseMotion.git'
-Plug 'https://github.com/vim-scripts/auto_mkdir.git'
-Plug 'https://github.com/tpope/vim-surround.git'
-Plug 'craigemery/vim-autotag'
+Plug 'ekalinin/dockerfile.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'kaicataldo/material.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug '~/.fzf'
+
 
 
 call plug#end()
@@ -19,13 +20,20 @@ syntax on
 
 let mapleader = "ç"
 
-set encoding=utf-8
+set nocompatible
+set encoding=UTF-8
 set relativenumber
 set number
 set undofile
 set backspace=indent,eol,start
 set ignorecase
 set smartcase
+set background=dark
+colorscheme material
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 filetype on
 filetype plugin on
 set t_Co=256
@@ -59,10 +67,17 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+  " FZF
+nnoremap <leader>f :FZF<CR>
+nnoremap <leader>l :FZF src<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>ta :Tags<CR>
 " }
 
 map <C-n> :NERDTreeToggle<CR>
 
 let &colorcolumn="80"
-
-let g:airline_theme='minimalist'
+let g:editorconfig_local_vimrc = 1
+let g:airline_theme='angr'
+set rtp+=~/.fzf
+set tags+=.git/tags
