@@ -13,8 +13,6 @@ Plug 'kaicataldo/material.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug '~/.fzf'
 
-
-
 call plug#end()
 syntax on 
 
