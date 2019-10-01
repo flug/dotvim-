@@ -37,7 +37,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/grep.vim'
-Plug 'vim-scripts/CSApprox'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
@@ -70,7 +69,7 @@ Plug 'honza/vim-snippets'
 
 "" Color
 ""Plug 'tomasr/molokai'
-Plug 'dracula/vim', { 'as': 'dracula' }
+"Plug 'dracula/vim', { 'as': 'dracula' }
 "Plug 'vim-scripts/wombat256.vim'
 
 "*****************************************************************************
@@ -143,7 +142,7 @@ set undofile
 let mapleader=';'
 
 "" Enable hidden buffers
-"set hidden
+""set hidden
 
 "" Searching
 set hlsearch
@@ -257,7 +256,8 @@ let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 30
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <C-f> :NERDTreeFind<CR>
-nnoremap <silent> <C-e> :NERDTreeToggle<CR>
+nnoremap <silent> <C-w> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " grep.vim
 nnoremap <silent> <leader>f :Rgrep<CR>
